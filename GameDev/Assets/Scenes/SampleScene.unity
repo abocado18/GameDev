@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 91368824}
   - component: {fileID: 91368823}
   - component: {fileID: 91368825}
+  - component: {fileID: 91368826}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -227,6 +228,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &91368826
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91368822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &94258563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9104612387378978613, guid: ee4e0e6ee765e914e9ca846280a8723d, type: 3}
