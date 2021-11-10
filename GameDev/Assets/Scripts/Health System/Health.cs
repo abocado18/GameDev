@@ -27,4 +27,17 @@ public class Health : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Damage>() != null)
+        {
+            health -= collision.gameObject.GetComponent<Damage>().damage;
+            print(collision.gameObject.GetComponent<Damage>().damage);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
