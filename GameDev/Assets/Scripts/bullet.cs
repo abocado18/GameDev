@@ -6,10 +6,11 @@ public class bullet : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb; 
-
+    
     void Start()
     {
         rb.velocity = transform.right * speed;
+        Destroy(gameObject, 3f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
