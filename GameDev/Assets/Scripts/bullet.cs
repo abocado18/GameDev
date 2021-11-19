@@ -17,5 +17,6 @@ public class bullet : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
         Destroy(gameObject);
+        //ScoreScript.scoreValue += 10;
     }
 }

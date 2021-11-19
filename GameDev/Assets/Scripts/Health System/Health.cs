@@ -44,6 +44,7 @@ public class Health : MonoBehaviour
                     SceneManager.LoadScene(name);
                 }
                 Destroy(gameObject);
+                ScoreScript.scoreValue += 10;
             }
         }
     }
