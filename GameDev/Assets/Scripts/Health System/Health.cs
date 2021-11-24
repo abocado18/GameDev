@@ -70,6 +70,11 @@ public class Health : MonoBehaviour
             
             if (health <= 0)
             {
+                print(gameObject.tag);
+                if (gameObject.tag == "Enemy")
+                {
+                    ScoreScript.scoreValue += 10;
+                }
                 Destroy(gameObject);
             }
         }
