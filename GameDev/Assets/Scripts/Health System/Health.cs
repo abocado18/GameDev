@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    int health;
+    public int health;
     public int maxHealth;
     public string[] canDamagedBy;
     private void Start()
@@ -32,18 +32,26 @@ public class Health : MonoBehaviour
             if (canMakeDamage)
             {
                 health -= collision.gameObject.GetComponent<Damage>().damage;
-                print(collision.gameObject.GetComponent<Damage>().damage);
+                
             }
 
             if (health <= 0)
             {
                 if(gameObject.tag == "Player")
                 {
+                    ScoreScript.scoreValue = 0;
                     Scene currentScene = SceneManager.GetActiveScene();
                     string name = currentScene.name;
                     SceneManager.LoadScene(name);
                 }
-                Destroy(gameObject);
+
+                if(gameObject.tag == "Enemy")
+                {
+                    ScoreScript.scoreValue += 10;
+                    Destroy(gameObject);
+                    
+                }
+              
             }
         }
     }
@@ -66,16 +74,25 @@ public class Health : MonoBehaviour
                 health -= collision.gameObject.GetComponent<Damage>().damage;
                 print(collision.gameObject.name);
             }
-            
-            
+
+
             if (health <= 0)
             {
-                print(gameObject.tag);
+                if (gameObject.tag == "Player")
+                {
+                    ScoreScript.scoreValue = 0;
+                    Scene currentScene = SceneManager.GetActiveScene();
+                    string name = currentScene.name;
+                    SceneManager.LoadScene(name);
+                }
+
                 if (gameObject.tag == "Enemy")
                 {
                     ScoreScript.scoreValue += 10;
+                    Destroy(gameObject);
+
                 }
-                Destroy(gameObject);
+
             }
         }
     }
