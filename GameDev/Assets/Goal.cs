@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour
     bool won = false;
 
     void Start() {
-        mytimer = GetComponent<TimerControllerScript>();
+        mytimer = GameObject.Find("TimerCounterText").GetComponent<TimerControllerScript>();
     }
     
 
@@ -21,7 +21,7 @@ public class Goal : MonoBehaviour
         {
             print("You win");
             won = true;
-            ScoreScript.scoreValue = ScoreScript.scoreValue + (int)Math.Floor(500/mytimer.timeInSeconds);
+            ScoreScript.scoreValue += (int)Math.Floor(500/mytimer.timeInSeconds);
         }
     }
 }
