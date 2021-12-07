@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - TimerCounterText
+  - Lever
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     bool isGrounded;
     bool jump;
+    bool cutJump;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
         if(isGrounded && Input.GetButtonDown("Jump"))
         {
             jump = true;
+        }
+
+        if(!isGrounded && Input.GetButtonUp("Jump"))
+        {
+            if(rb.velocity.y > 0)
+            {
+                cutJump = true;
+            }
+
         }
 
         //Gun Rotation
@@ -50,6 +60,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jump = false;
+        }
+
+        if(cutJump == true)
+        {
+            cutJump = false;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            
         }
     }
 

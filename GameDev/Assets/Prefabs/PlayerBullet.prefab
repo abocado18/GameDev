@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 125279381367065955}
+  TagCanNotHit:
+  - Lever
 --- !u!114 &8917875514621256423
 MonoBehaviour:
   m_ObjectHideFlags: 0
