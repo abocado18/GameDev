@@ -10,7 +10,20 @@ public class ButtonFunctionMainMenu : MonoBehaviour
     public GameObject levelEditor;
     void Start()
     {
-        levelEditor.SetActive(false);
+        if(InfoGoalBoard.showLevelSelector == true)
+        {
+            startButton.enabled = false;
+            exitButton.enabled = false;
+            levelEditor.SetActive(true);
+            InfoGoalBoard.showLevelSelector = false;
+        }
+        else
+        {
+            startButton.enabled = true;
+            exitButton.enabled = true;
+            levelEditor.SetActive(false);
+        }
+        
     }
 
     public void StartButton()
