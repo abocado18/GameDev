@@ -8,7 +8,7 @@ public class HighscoreTable : MonoBehaviour
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
-    //private List<HighscoreEntry> highscoreEntryList;
+    private List<HighscoreEntry> highscoreEntryList;
 
     private void Awake() {
         entryContainer = transform.Find("highscoreEntryContainer");
@@ -25,10 +25,11 @@ public class HighscoreTable : MonoBehaviour
         //    new HighscoreEntry{ score = 50012, name = "MANUEL"},
         //};
 
-        AddHighscoreEntry(10000, "Just me");
+        AddHighscoreEntry(1444000, "SUSY");
+
         string json = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(json);
-
+        //PlayerPrefs.DeleteKey("highscoreTable");
 
         //Sort entry list by score
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
@@ -45,22 +46,23 @@ public class HighscoreTable : MonoBehaviour
         }
 
         highscoreEntryTransformList = new List<Transform>();
+        
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
         {
             CreateHighscoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
         }
 
-        
+        //AddHighscoreEntry(10000, "SUSY");
         //Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
         //string json = JsonUtility.ToJson(highscores);
         //PlayerPrefs.SetString("highscoreTable", json);
         //PlayerPrefs.Save();
         //Debug.Log(PlayerPrefs.GetString("highscoreTable"));
-        
+
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> TransformList) {
-        float templateHeight = 50f;
+        float templateHeight = 30f;
 
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
