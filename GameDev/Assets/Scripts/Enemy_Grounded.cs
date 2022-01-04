@@ -23,7 +23,7 @@ public class Enemy_Grounded : MonoBehaviour
     {
         if(Vector3.Distance(player.position, transform.position) < distance)
         {
-            time -= timeUntilNextShootInSeconds * Time.deltaTime;
+            time -= Time.deltaTime;
             if(time <= 0f)
             {
                 time = timeUntilNextShootInSeconds;
