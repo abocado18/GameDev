@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static int score = 0;
+    public static string playerName = "Player";
 
     void Awake()
     {

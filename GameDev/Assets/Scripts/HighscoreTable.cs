@@ -25,7 +25,7 @@ public class HighscoreTable : MonoBehaviour
         //    new HighscoreEntry{ score = 50012, name = "MANUEL"},
         //};
 
-        AddHighscoreEntry(GameManager.score, "PLAYER1");
+        AddHighscoreEntry(GameManager.score, GameManager.playerName);
 
         string json = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(json);
@@ -104,6 +104,7 @@ public class HighscoreTable : MonoBehaviour
         }
         else 
         {
+            //if there's none already, create it 
             highscoreEntryList = new List<HighscoreEntry>() { highscoreEntry };
             Highscores highscores = new Highscores { highscoreEntryList = highscoreEntryList };
             string json = JsonUtility.ToJson(highscores);
