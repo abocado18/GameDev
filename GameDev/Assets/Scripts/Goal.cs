@@ -21,7 +21,7 @@ public class Goal : MonoBehaviour
             if (timer != null)
             {
                 int timeInSeconds = Convert.ToInt32(timer.GetComponent<TimerControllerScript>().timeInSeconds);
-                ScoreScript.scoreValue = ScoreScript.scoreValue + Convert.ToInt32(1200 / timeInSeconds);
+                ScoreScript.scoreValue = ScoreScript.scoreValue + Convert.ToInt32(3600 / timeInSeconds);
                 timer.GetComponent<TimerControllerScript>().EndTimer();
                 GameManager.setScore(ScoreScript.scoreValue);
                 SceneManager.LoadScene(2);
