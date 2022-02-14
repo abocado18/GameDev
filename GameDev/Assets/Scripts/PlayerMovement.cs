@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public string ground;
     GameObject gun;
     Rigidbody2D rb;
-    float horizontal;
-    bool isGrounded;
+    public float horizontal;
+    public bool isGrounded;
     bool jump;
     bool cutJump;
     // Start is called before the first frame update

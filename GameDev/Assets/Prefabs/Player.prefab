@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 9104612387378978610}
   - component: {fileID: 94258564}
   - component: {fileID: 1495166704}
+  - component: {fileID: 8699993767765908167}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -556,6 +557,8 @@ MonoBehaviour:
   runSpeed: 10
   jumpForce: 20
   ground: Ground
+  horizontal: 0
+  isGrounded: 0
 --- !u!114 &94258564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,10 +585,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e653e1e4b30262a468d7b54ba207e690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   maxHealth: 10
   canDamagedBy:
   - EnemyBullet
   - Enemy
+--- !u!114 &8699993767765908167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104612387378978613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa6d45ae9975554c99d1164b767c4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 4
+  dashForceTimer: 0
+  startTimer: 0.25
 --- !u!1 &9104612387916643368
 GameObject:
   m_ObjectHideFlags: 0
